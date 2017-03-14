@@ -1,0 +1,203 @@
+$background-color: #ddd;
+$nav-link-color: #1A9AFC;
+$nav-link-hover-color: #004EB0;
+$section-title-color: #1A9AFC;
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+* {
+     box-sizing: border-box;
+}
+
+body {
+     background: $background-color;
+}
+
+
+
+/*****
+    Slideout Nav Menu
+*****/
+
+#slideout-menu {
+     box-sizing: content-box;
+     position: fixed;
+     left: 0;
+     top: 0;
+     right: 0;
+     padding: 1em;
+     z-index: 5;
+}
+
+#slideout-menu .logo {
+     height: 100%;
+     width: auto;
+     position: absolute;
+     margin: auto 0 auto 20px;
+     left: 0;
+     top: 0;
+}
+
+#slideout-menu ul {
+     position: relative;
+     left: 100%;
+     padding: .5em;
+     background: none;
+     text-align: right;
+     transition: 1s ease 0s;
+}
+
+#slideout-menu ul li {
+     display: inline-block;
+     padding: 0.25em 1em;
+     text-decoration: none;
+}
+
+#slideout-menu ul > a {
+     font-family: 'Ubuntu', Arial;
+     background: none;
+     text-decoration: none;
+     font-size: 3vh;
+     color: $nav-link-color;
+}
+
+#slideout-menu ul > a:hover {
+     color: $nav-link-hover-color;
+}
+
+#slideout-menu:hover > ul {
+     position: relative;
+     left: 0;
+}
+
+/*****
+     Hero Image
+*****/
+
+#hero-image {
+     position: absolute;
+     top: 13vh;
+     margin-left: -35px;
+     margin-right: -35px;
+     width: 100%;
+     overflow: hidden;
+     background-image: url('../img/nightsky.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center top;
+     height: 73vh;
+     z-index: 0;
+}
+
+#hero-image .title {
+     font-family: 'Ubuntu', Arial;
+     color: #fff;
+     margin-top: 40px;
+     margin-left: 10vw;
+     font-size: 3em;
+}
+
+
+/*****
+     Section
+*****/
+
+.section {
+     min-height: 95vh;
+     padding: 40px 40px;
+     overflow: hidden;
+}
+
+.section .section-title {
+     z-index: 5;
+     color: $section-title-color;
+     font-family: 'Ubuntu', Arial;
+     font-size: 3em;
+     margin-top: 40px;
+}
+
+
+/*****
+     Home
+*****/
+
+.home {
+     height: 100vh;
+     padding: 40px 20px !important;
+}
+
+
+/*****
+     Portfolio
+*****/
+
+.portfolio {
+
+}
+
+
+/*****
+     Resume
+*****/
+
+.resume {
+
+}
+
+
+/*****
+     About
+*****/
+
+.about {
+
+}
+
+
+/*****
+     Contact
+*****/
+
+.contact {
+     height: 100vh;
+}
+
+
+
+
+/*****
+     Footer
+*****/
+
+footer {
+     background-color: $background-color;
+     position: fixed;
+     width: 100%;
+     bottom: 0;
+     height: 7vh;
+     padding: 10px 30px;
+}
+
+footer .copyright {
+     position: absolute;
+     display: inline-block;
+     font-size: 1em;
+     font-style: italic;
+     color: $section-title-color;
+     vertical-align: middle;
+     margin-left: 20px;
+     margin-bottom: 10px;
+     left: 0;
+     bottom: 0;
+}
+
+footer .signature {
+     position: absolute;
+     height: 100%;
+     width: auto;
+     margin: 0 20px;
+     right: 0;
+     bottom: 0;
+}
