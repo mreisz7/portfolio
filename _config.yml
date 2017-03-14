@@ -22,10 +22,12 @@ keep_files:
   - ".gitignore"
 
 # Build settings
+repository: mreisz7/portfolio.git
 markdown: kramdown
 theme: minima
 sass:
-    style: :compressed
+    sass_dir: _sass
+    style: compressed
 gems:
   - jekyll-feed
 exclude:
