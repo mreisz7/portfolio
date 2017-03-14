@@ -35,7 +35,7 @@ body {
 }
 
 #slideout-menu .logo {
-     height: 75%;
+     height: 10vh;
      width: auto;
      position: absolute;
      margin: auto 0 auto 20px;
@@ -188,7 +188,7 @@ footer {
 footer .copyright {
      position: absolute;
      display: inline-block;
-     font-size: 1em;
+     font-size: .7em;
      font-style: italic;
      color: $section-title-color;
      vertical-align: middle;
