@@ -4,8 +4,13 @@
 $background-image: 'desktop.jpg';
 $background-color: #ddd;
 $nav-link-color: #1A9AFC;
-$nav-link-hover-color: #004EB0;
+$nav-link-hover-color: #147bc9;
 $section-title-color: #1A9AFC;
+$contact-background: #fff;
+$contact-border: #555;
+$contact-shadow: #333;
+$contact-submit: #1A9AFC;
+$contact-submit-hover: #004EB0;
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
@@ -65,6 +70,11 @@ body {
      text-decoration: none;
      font-size: 3vh;
      color: $nav-link-color;
+     padding-bottom: 10px;
+}
+
+#slideout-menu ul > a:hover {
+     border-bottom: 4px solid $nav-link-color;
 }
 
 #slideout-menu ul > a:hover {
@@ -93,7 +103,7 @@ body {
      background-attachment: fixed;
      background-position: center top;
      height: 73vh;
-     z-index: 0;
+     z-index: 10;
 }
 
 #hero-image .title {
@@ -120,7 +130,9 @@ body {
      color: $section-title-color;
      font-family: 'Ubuntu', Arial;
      font-size: 3em;
-     margin: 60px 40px 20px 20px;
+     text-align: center;
+     margin-top: 13vh;
+     margin-bottom: 2vh;
 }
 
 
@@ -128,7 +140,7 @@ body {
      Home
 *****/
 
-.home {
+#home {
      height: 100vh;
      padding: 40px 20px !important;
 }
@@ -138,7 +150,7 @@ body {
      Portfolio
 *****/
 
-.portfolio {
+#portfolio {
 
 }
 
@@ -147,7 +159,7 @@ body {
      Resume
 *****/
 
-.resume {
+#resume {
 
 }
 
@@ -156,7 +168,7 @@ body {
      About
 *****/
 
-.about {
+#about {
 
 }
 
@@ -165,10 +177,69 @@ body {
      Contact
 *****/
 
-.contact {
+#contact {
      height: 100vh;
 }
 
+#contact .contact-background {
+     background-color: $contact-background;
+     border: 2px solid $contact-border;
+     padding: 20px;
+     box-shadow: 0px 0px 15px $contact-shadow;
+     -moz-box-shadow: 0px 0px 15px $contact-shadow;
+     -webkit-box-shadow:  0px 0px 15px $contact-shadow;
+}
+
+#contact input[type="text"],
+#contact input[type="date"],
+#contact input[type="datetime"],
+#contact input[type="email"],
+#contact input[type="number"],
+#contact input[type="search"],
+#contact input[type="time"],
+#contact input[type="url"],
+#contact input[type="password"],
+#contact textarea,
+#contact select
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid $contact-border;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px 'Ubuntu', Arial;
+    height: 45px;
+}
+
+#contact textarea{
+    resize: none;
+    overflow: hidden;
+}
+
+#contact input[type="button"],
+#contact input[type="submit"]{
+    background-color: $contact-submit;
+    border: 1px solid $contact-border;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Ubuntu', Arial;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#contact input[type="button"]:hover,
+#contact input[type="submit"]:hover {
+    background-color:$contact-submit-hover;
+}
 
 
 

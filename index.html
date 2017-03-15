@@ -72,6 +72,19 @@ title: {{ site.title }}
         <div class="section contact" id="contact">
             <h1 class="section-title">Contact</h1>
 
+            <div class="row">
+                <div class="contact-background col-sm-12 offset-md-4 col-md-4">
+                    <form action="https://formspree.io/{{ site.email }}" method="POST">
+                        <input placeholder="Name" type="text" name="name" />
+                        <input placeholder="Email" type="email" name="_replyto" />
+                        <textarea placeholder="Message" name="message" onkeyup="adjust_textarea(this)"></textarea>
+                        <input type="hidden" name="_next" value="#home" />
+                        <input type="hidden" name="_subject" value="Message from MReisz.com" />
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+
         </div>
 
 
@@ -87,6 +100,13 @@ title: {{ site.title }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="static/js/main.js"></script>
+    <script type="text/javascript">
+        //auto expand textarea
+        function adjust_textarea(h) {
+            h.style.height = "20px";
+            h.style.height = (h.scrollHeight)+"px";
+        }
+    </script>
 
 </body>
 
