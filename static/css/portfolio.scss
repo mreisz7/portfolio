@@ -10,7 +10,7 @@ $contact-background: #fff;
 $contact-border: #555;
 $contact-shadow: #333;
 $contact-submit: #1A9AFC;
-$contact-submit-hover: #004EB0;
+$contact-submit-hover: #147bc9;
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
@@ -31,6 +31,7 @@ body {
 
 #slideout-menu {
      box-sizing: content-box;
+     background-color: $background-color;
      position: fixed;
      left: 0;
      top: 0;
