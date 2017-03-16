@@ -16,12 +16,23 @@ title: {{ site.title }}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/portfolio.css">
+    <script src="static/js/loading-spinner.js"></script>
 
 </head>
 
 <body>
 
-    <div class="container-fluid">
+    <div id="loading-spinner">
+        <img src="static/img/mrlogo.png" class="spinner-logo" />
+        <div class="spinner outer">
+            <div class="spinner middle">
+                <div class="spinner inner">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-content" class="container-fluid">
 
         <nav id="slideout-menu">
 

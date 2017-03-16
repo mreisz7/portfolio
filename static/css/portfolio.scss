@@ -1,6 +1,8 @@
 ---
 ---
 
+$spinner-base-color: #ddd;
+$spinner-highlight-color: #f00;
 $background-image: 'desktop.jpg';
 $background-color: #ddd;
 $nav-link-color: #1A9AFC;
@@ -23,6 +25,103 @@ body {
      background: $background-color;
 }
 
+
+/*****
+    Spinner Animation
+*****/
+
+#loading-spinner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  //margin: -50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#page-content {
+  display: none;
+}
+
+.spinner-logo {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  border-radius: 50%;
+  border: 5px solid $spinner-base-color;
+  margin: -50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inner {
+  border-top: 5px solid $spinner-highlight-color;
+  width: 70px;
+  height: 70px;
+  margin: -35px;
+  -webkit-animation: inner-spin 3s linear infinite;
+  animation: inner-spin 3s linear infinite;
+}
+
+@-webkit-keyframes inner-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(720deg); }
+}
+
+@keyframes inner-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
+.middle {
+  border-left: 5px solid $spinner-highlight-color;
+  border-right: 5px solid $spinner-highlight-color;
+  width: 84px;
+  height: 84px;
+  margin: -42px;
+  -webkit-animation: middle-spin 3s linear infinite;
+  animation: middle-spin 3s linear infinite;
+}
+
+@-webkit-keyframes middle-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-720deg); }
+}
+
+@keyframes middle-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-720deg); }
+}
+
+.outer {
+  border-bottom: 5px solid $spinner-highlight-color;
+  width: 98px;
+  height: 98px;
+  margin: -49px;
+  -webkit-animation: outer-spin 3s linear infinite;
+  animation: outer-spin 3s linear infinite;
+}
+
+@-webkit-keyframes outer-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes outer-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 /*****
