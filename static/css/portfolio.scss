@@ -3,11 +3,13 @@
 
 $spinner-base-color: #ddd;
 $spinner-highlight-color: #f00;
+$sidebar-background: #000;
+$sidebar-text: #fff;
 $background-image: 'desktop.jpg';
 $background-color: #ddd;
 $nav-link-color: #1A9AFC;
 $nav-link-hover-color: #147bc9;
-$section-title-color: #1A9AFC;
+$section-title-color: #333;
 $contact-background: #fff;
 $contact-border: #555;
 $contact-shadow: #333;
@@ -34,7 +36,6 @@ body {
   position: absolute;
   width: 100px;
   height: 100px;
-  //margin: -50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -123,6 +124,62 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+/*****
+     Sidebar
+*****/
+
+#sidebar {
+     position: fixed;
+     width: 255px;
+     top: 50%;
+     left: -180px;
+     transform: translate(0, -50%);
+     background: $sidebar-background;
+     z-index: 15;
+     margin: 0;
+}
+
+#sidebar .sidebar-link {
+     display: inline-block;
+     text-decoration: none;
+     height: 50px;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     color: $sidebar-text;
+}
+
+#sidebar .sidebar-link:first-child {
+     margin-top: 20px;
+}
+
+#sidebar .sidebar-link:last-child {
+     margin-bottom: 20px;
+}
+
+#sidebar .sidebar-link .sidebar-span {
+     display: inline-block;
+     width: 200px;
+     height: 50px;
+     margin: 0;
+     padding: 0;
+}
+
+#sidebar .sidebar-link .sidebar-span span {
+     font-size: 2em;
+}
+
+#sidebar .sidebar-link .sidebar-icon {
+     display: inline-block;
+     width: 50px;
+     height: 50px;
+     margin: 0;
+     padding: 0;
+}
+
+#sidebar .sidebar-link .sidebar-icon i {
+     font-size: 2em;
+}
 
 /*****
     Slideout Nav Menu
@@ -284,6 +341,7 @@ body {
 #contact .contact-background {
      background-color: $contact-background;
      border: 2px solid $contact-border;
+     border-radius: 10px;
      padding: 20px;
      box-shadow: 0px 0px 15px $contact-shadow;
      -moz-box-shadow: 0px 0px 15px $contact-shadow;
@@ -312,9 +370,7 @@ body {
     border: none;
     border: 1px solid $contact-border;
     border-radius: 5px;
-    background: #dddddd;
-    //border-bottom: 1px solid $contact-border;
-    //background: transparent;
+    background: #eee;
     margin-bottom: 10px;
     font: 16px 'Ubuntu', Arial;
     height: 45px;
@@ -357,7 +413,7 @@ footer {
      width: 100%;
      bottom: 0;
      height: 7vh;
-     padding: 10px 30px;
+     padding: 10px 30px 20px 30px;
 }
 
 footer .copyright {
@@ -368,7 +424,7 @@ footer .copyright {
      color: $section-title-color;
      vertical-align: middle;
      margin-left: 20px;
-     margin-bottom: 10px;
+     margin-bottom: 20px;
      left: 0;
      bottom: 0;
 }

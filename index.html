@@ -8,14 +8,15 @@ title: {{ site.title }}
 <head>
 
     <title>{{ site.title }}</title>
-    <meta charset="utf-8">
-    <meta name="description" content="{{ site.title }}">
-    <meta name="author" content="Michael Reisz">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" href="static/img/favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ site.title }}" />
+    <meta name="author" content="Michael Reisz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="static/img/favicon.ico" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/portfolio.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="static/css/portfolio.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.css" />
     <script src="static/js/loading-spinner.js"></script>
 
 </head>
@@ -33,6 +34,47 @@ title: {{ site.title }}
     </div>
 
     <div id="page-content" class="container-fluid">
+
+        <div id="sidebar">
+            <div>
+                <!-- GitHub -->
+                <a href="https://www.github.com/" target="_blank" class="sidebar-link">
+                    <div class="sidebar-span">
+                        <span>GitHub</span>
+                    </div>
+                    <div class="sidebar-icon">
+                        <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <!-- CodePen -->
+                <a href="https://www.codepen.io/" target="_blank" class="sidebar-link">
+                    <div class="sidebar-span">
+                        <span>CodePen</span>
+                    </div>
+                    <div class="sidebar-icon">
+                        <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/" target="_blank" class="sidebar-link">
+                    <div class="sidebar-span">
+                        <span>LinkedIn</span>
+                    </div>
+                    <div class="sidebar-icon">
+                        <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <!-- Contact -->
+                <a href="#contact" class="sidebar-link">
+                    <div class="sidebar-span">
+                        <span>Contact</span>
+                    </div>
+                    <div class="sidebar-icon">
+                        <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
 
         <nav id="slideout-menu">
 
@@ -99,7 +141,6 @@ title: {{ site.title }}
         </div>
 
 
-
         <footer>
             <span class="copyright">Copyright &copy; 2017 Michael Reisz</span>
             <img class="signature" src="static/img/Reisz.png" alt="Michael Reisz" />
@@ -111,13 +152,6 @@ title: {{ site.title }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="static/js/main.js"></script>
-    <script type="text/javascript">
-        //auto expand textarea
-        function adjust_textarea(h) {
-            h.style.height = "20px";
-            h.style.height = (h.scrollHeight)+"px";
-        }
-    </script>
 
 </body>
 
