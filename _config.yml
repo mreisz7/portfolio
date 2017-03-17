@@ -1,0 +1,35 @@
+# Site settings
+title: Michael Reisz Designs
+email: michael_reisz@yahoo.com
+description: > # A showcase of the work of Michael Reisz.
+url: "http://www.michael-reisz.com"
+baseurl: "" # the subpath of your site, e.g. /blog
+github_username:  "https://github.com/mreisz7"
+codepen_username: "https://codepen.io/mreisz/"
+linked_profile: "https://www.linkedin.com/in/michael-reisz-41482012/"
+
+exclude:
+  - "/vendor/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE.md"
+  - "*.gemspec"
+
+keep_files:
+  - "CNAME"
+  - ".git"
+  - ".gitignore"
+
+# Build settings
+repository: mreisz7/portfolio.git
+markdown: kramdown
+theme: minima
+sass:
+    sass_dir: _sass
+    style: compressed
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
