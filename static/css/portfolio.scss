@@ -1,0 +1,244 @@
+---
+---
+
+$spinner-base-color: #ddd;
+$spinner-highlight-color: #f00;
+$background-image: 'desktop.jpg';
+$background-color: #ddd;
+$nav-link-color: #1A9AFC;
+$nav-link-hover-color: #147bc9;
+$section-title-color: #333;
+$contact-background: #fff;
+$contact-border: #555;
+$contact-shadow: #333;
+$contact-submit: #1A9AFC;
+$contact-submit-hover: #147bc9;
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+* {
+     box-sizing: border-box;
+}
+
+body {
+     background: $background-color;
+}
+
+
+/*****
+    Spinner Animation
+*****/
+
+#loading-spinner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#page-content {
+  display: none;
+}
+
+.spinner-logo {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  border-radius: 50%;
+  border: 5px solid $spinner-base-color;
+  margin: -50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inner {
+  border-top: 5px solid $spinner-highlight-color;
+  width: 70px;
+  height: 70px;
+  margin: -35px;
+  -webkit-animation: inner-spin 3s linear infinite;
+  animation: inner-spin 3s linear infinite;
+}
+
+@-webkit-keyframes inner-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(720deg); }
+}
+
+@keyframes inner-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
+.middle {
+  border-left: 5px solid $spinner-highlight-color;
+  border-right: 5px solid $spinner-highlight-color;
+  width: 84px;
+  height: 84px;
+  margin: -42px;
+  -webkit-animation: middle-spin 3s linear infinite;
+  animation: middle-spin 3s linear infinite;
+}
+
+@-webkit-keyframes middle-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-720deg); }
+}
+
+@keyframes middle-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-720deg); }
+}
+
+.outer {
+  border-bottom: 5px solid $spinner-highlight-color;
+  width: 98px;
+  height: 98px;
+  margin: -49px;
+  -webkit-animation: outer-spin 3s linear infinite;
+  animation: outer-spin 3s linear infinite;
+}
+
+@-webkit-keyframes outer-spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes outer-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/*****
+    Slideout Nav Menu
+*****/
+
+#slideout-menu {
+     box-sizing: content-box;
+     background-color: $background-color;
+     position: fixed;
+     left: 0;
+     top: 0;
+     right: 0;
+     padding: 2vh;
+     z-index: 5;
+}
+
+#slideout-menu .logo {
+     height: 10vh;
+     width: auto;
+     position: absolute;
+     margin: auto 0 auto 20px;
+     left: 0;
+     top: 0;
+     z-index: 5;
+}
+
+/*****
+     Hero Image
+*****/
+
+#hero-image {
+     position: absolute;
+     top: 13vh;
+     margin-left: -35px;
+     margin-right: -35px;
+     width: 100%;
+     overflow: hidden;
+     background-image: url('../img/' + $background-image);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center top;
+     height: 73vh;
+     z-index: 10;
+}
+
+#hero-image .title {
+     font-family: 'Ubuntu', Arial;
+     font-weight: bold;
+     color: #f00;
+     margin-top: 33vh;
+     margin-left: 12vw;
+     text-align: center;
+     font-size: 4em;
+}
+
+/*****
+     Section
+*****/
+
+.section {
+     min-height: 95vh;
+     padding: 40px 40px;
+     overflow: hidden;
+}
+
+.section .section-title {
+     z-index: 5;
+     color: $section-title-color;
+     font-family: 'Ubuntu', Arial;
+     font-size: 3em;
+     text-align: center;
+     margin-top: 13vh;
+     margin-bottom: 2vh;
+}
+
+
+/*****
+     Home
+*****/
+
+#home {
+     height: 100vh;
+     padding: 40px 20px !important;
+}
+
+/*****
+     Footer
+*****/
+
+footer {
+     background-color: $background-color;
+     position: fixed;
+     width: 100%;
+     bottom: 0;
+     height: 7vh;
+     padding: 10px 30px;
+}
+
+footer .copyright {
+     position: absolute;
+     display: inline-block;
+     font-size: .7em;
+     font-style: italic;
+     color: $section-title-color;
+     vertical-align: middle;
+     margin-left: 20px;
+     margin-bottom: 10px;
+     left: 0;
+     bottom: 0;
+}
+
+footer .signature {
+     position: absolute;
+     height: 100%;
+     width: auto;
+     margin: 0 20px;
+     right: 0;
+     bottom: 0;
+}
