@@ -1,6 +1,6 @@
 window.onload = function() {
     var myVar;
-    myVar = setTimeout(showPage, 2000);
+    myVar = setTimeout(showPage, 3000);
 
     function showPage() {
         document.getElementById("loading-spinner").style.display = "none";

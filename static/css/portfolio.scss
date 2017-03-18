@@ -17,20 +17,26 @@ $contact-submit: #1A9AFC;
 $contact-submit-hover: #147bc9;
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
 
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-     background: $background-color;
+  background: $background-color;
 }
 
 
 /*****
     Spinner Animation
 *****/
+
+
+#page-content {
+  display: none;
+}
 
 #loading-spinner {
   position: absolute;
@@ -40,207 +46,215 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-}
 
-#page-content {
-  display: none;
-}
+  .spinner-logo {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.spinner-logo {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  .spinner {
+    border-radius: 50%;
+    border: 5px solid $spinner-base-color;
+    margin: -50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
-.spinner {
-  border-radius: 50%;
-  border: 5px solid $spinner-base-color;
-  margin: -50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  .inner {
+    border-top: 5px solid $spinner-highlight-color;
+    border-bottom: 5px solid $spinner-highlight-color;
+    width: 70px;
+    height: 70px;
+    margin: -35px;
+    -webkit-animation: inner-spin 3s linear infinite;
+    animation: inner-spin 3s linear infinite;
+  }
 
-.inner {
-  border-top: 5px solid $spinner-highlight-color;
-  width: 70px;
-  height: 70px;
-  margin: -35px;
-  -webkit-animation: inner-spin 3s linear infinite;
-  animation: inner-spin 3s linear infinite;
-}
+  .outer {
+    border-right: 5px solid $spinner-highlight-color;
+    border-left: 5px solid $spinner-highlight-color;
+    width: 84px;
+    height: 84px;
+    margin: -42px;
+    -webkit-animation: outer-spin 3s linear infinite;
+    animation: outer-spin 3s linear infinite;
+  }
 
-@-webkit-keyframes inner-spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(720deg); }
-}
+  @-webkit-keyframes inner-spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
 
-@keyframes inner-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(720deg); }
-}
+  @keyframes inner-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
-.middle {
-  border-left: 5px solid $spinner-highlight-color;
-  border-right: 5px solid $spinner-highlight-color;
-  width: 84px;
-  height: 84px;
-  margin: -42px;
-  -webkit-animation: middle-spin 3s linear infinite;
-  animation: middle-spin 3s linear infinite;
-}
+  @-webkit-keyframes outer-spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(180deg); }
+  }
 
-@-webkit-keyframes middle-spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(-720deg); }
-}
+  @keyframes outer-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+  }
 
-@keyframes middle-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-720deg); }
-}
-
-.outer {
-  border-bottom: 5px solid $spinner-highlight-color;
-  width: 98px;
-  height: 98px;
-  margin: -49px;
-  -webkit-animation: outer-spin 3s linear infinite;
-  animation: outer-spin 3s linear infinite;
-}
-
-@-webkit-keyframes outer-spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes outer-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /*****
      Sidebar
 *****/
 
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }
+}
+
 #sidebar {
-     position: fixed;
-     width: 255px;
-     top: 50%;
-     left: -180px;
-     transform: translate(0, -50%);
-     background: $sidebar-background;
-     z-index: 15;
-     margin: 0;
+  position: fixed;
+  width: 300px;
+  top: 50%;
+  left: -250px;
+  transform: translate(0, -50%);
+  background: $sidebar-background;
+  z-index: 15;
+  margin: 0;
+  border-radius: 20px;
+  opacity: 0.7;
+  transition: .25s ease .25s;
+
+  ul {
+    width: 100%;
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+
+    li {
+      text-decoration: none;
+      height: 50px;
+      width: 100%;
+    }
+
+    li:first-child {
+      margin-top: 20px;
+    }
+
+    li:last-child {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  .sidebar-link {
+    display: inline-block;
+    text-decoration: none;
+    height: 50px;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    color: $sidebar-text;
+  }
+
+  .sidebar-link:hover {
+    color: #1A9AFC;
+  }
+
+  .sidebar-link .sidebar-span {
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 2em;
+  }
+
+  .sidebar-link .sidebar-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 2em;
+  }
+
 }
 
-#sidebar .sidebar-link {
-     display: inline-block;
-     text-decoration: none;
-     height: 50px;
-     width: 100%;
-     margin: 0;
-     padding: 0;
-     color: $sidebar-text;
-}
-
-#sidebar .sidebar-link:first-child {
-     margin-top: 20px;
-}
-
-#sidebar .sidebar-link:last-child {
-     margin-bottom: 20px;
-}
-
-#sidebar .sidebar-link .sidebar-span {
-     display: inline-block;
-     width: 200px;
-     height: 50px;
-     margin: 0;
-     padding: 0;
-}
-
-#sidebar .sidebar-link .sidebar-span span {
-     font-size: 2em;
-}
-
-#sidebar .sidebar-link .sidebar-icon {
-     display: inline-block;
-     width: 50px;
-     height: 50px;
-     margin: 0;
-     padding: 0;
-}
-
-#sidebar .sidebar-link .sidebar-icon i {
-     font-size: 2em;
-}
+#sidebar:hover {
+    left: -50px;
+  }
 
 /*****
     Slideout Nav Menu
 *****/
 
 #slideout-menu {
-     box-sizing: content-box;
-     background-color: $background-color;
-     position: fixed;
-     left: 0;
-     top: 0;
-     right: 0;
-     padding: 2vh;
-     z-index: 5;
-}
+  box-sizing: content-box;
+  background-color: $background-color;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 2vh;
+  z-index: 5;
 
-#slideout-menu .logo {
-     height: 10vh;
-     width: auto;
-     position: absolute;
-     margin: auto 0 auto 20px;
-     left: 0;
-     top: 0;
-     z-index: 5;
-}
+  .logo {
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    margin: auto 0 auto 20px;
+    left: 0;
+    top: 0;
+    z-index: 5;
+  }
 
-#slideout-menu ul {
-     position: relative;
-     left: 100%;
-     padding: .5em;
-     background: none;
-     text-align: right;
-     transition: 1s ease 0s;
-}
+  ul {
+    position: relative;
+    left: 100%;
+    padding: .5em;
+    background: none;
+    text-align: right;
+    transition: 2s ease 0s;
 
-#slideout-menu ul li {
-     display: inline-block;
-     padding: 0.25em 1em;
-     text-decoration: none;
-}
+    li {
+      display: inline-block;
+      padding: 0.25em 1em;
+      text-decoration: none;
+    }
 
-#slideout-menu ul > a {
-     font-family: 'Ubuntu', Arial;
-     background: none;
-     text-decoration: none;
-     font-size: 3vh;
-     color: $nav-link-color;
-     padding-bottom: 10px;
-}
+  }
 
-#slideout-menu ul > a:hover {
-     border-bottom: 4px solid $nav-link-color;
-}
+  ul > a {
+    font-family: 'Ubuntu', Arial;
+    background: none;
+    text-decoration: none;
+    font-size: 3vh;
+    color: $nav-link-color;
+    padding-bottom: 10px;
+  }
 
-#slideout-menu ul > a:hover {
-     color: $nav-link-hover-color;
+  ul > a:hover {
+    color: $nav-link-hover-color;
+    border-bottom: 4px solid $nav-link-color;
+  }
 }
 
 #slideout-menu:hover > ul {
-     position: relative;
-     left: 0;
+  //position: relative;
+  left: 0;
+  transition: 1s ease 0s;
+}
+
+#slideout-menu .opened {
+  left: 0 !important;
+  transition: 1s ease 0s;
 }
 
 /*****
@@ -248,27 +262,29 @@ body {
 *****/
 
 #hero-image {
-     position: absolute;
-     top: 13vh;
-     margin-left: -35px;
-     margin-right: -35px;
-     width: 100%;
-     overflow: hidden;
-     background-image: url('../img/' + $background-image);
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-position: center top;
-     height: 73vh;
-     z-index: 10;
+  position: absolute;
+  top: 13vh;
+  margin-left: -35px;
+  margin-right: -35px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('../img/' + $background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  height: 73vh;
+  z-index: 10;
 }
 
 #hero-image .title {
-     font-family: 'Ubuntu', Arial;
-     color: #fff;
-     margin-top: 40px;
-     margin-left: 10vw;
-     font-size: 3em;
+  font-family: 'Share Tech Mono', monospace;
+  color: #000;
+  position: relative;
+  text-align: right;
+  top: 10vh;
+  padding-right: 15vw;
+  font-size: 3em;
 }
 
 
@@ -277,19 +293,19 @@ body {
 *****/
 
 .section {
-     min-height: 95vh;
-     padding: 40px 40px;
-     overflow: hidden;
+  min-height: 95vh;
+  padding: 40px 40px;
+  overflow: hidden;
 }
 
 .section .section-title {
-     z-index: 5;
-     color: $section-title-color;
-     font-family: 'Ubuntu', Arial;
-     font-size: 3em;
-     text-align: center;
-     margin-top: 13vh;
-     margin-bottom: 2vh;
+  z-index: 5;
+  color: $section-title-color;
+  font-family: 'Ubuntu', Arial;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 13vh;
+  margin-bottom: 2vh;
 }
 
 
@@ -298,8 +314,8 @@ body {
 *****/
 
 #home {
-     height: 100vh;
-     padding: 40px 20px !important;
+  height: 100vh;
+  padding: 40px 20px !important;
 }
 
 
@@ -335,17 +351,17 @@ body {
 *****/
 
 #contact {
-     height: 100vh;
+  height: 100vh;
 }
 
 #contact .contact-background {
-     background-color: $contact-background;
-     border: 2px solid $contact-border;
-     border-radius: 10px;
-     padding: 20px;
-     box-shadow: 0px 0px 15px $contact-shadow;
-     -moz-box-shadow: 0px 0px 15px $contact-shadow;
-     -webkit-box-shadow:  0px 0px 15px $contact-shadow;
+  background-color: $contact-background;
+  border: 2px solid $contact-border;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px $contact-shadow;
+  -moz-box-shadow: 0px 0px 15px $contact-shadow;
+  -webkit-box-shadow:  0px 0px 15px $contact-shadow;
 }
 
 #contact input[type="text"],
@@ -360,45 +376,45 @@ body {
 #contact textarea,
 #contact select
 {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    display: block;
-    width: 100%;
-    padding: 7px;
-    border: none;
-    border: 1px solid $contact-border;
-    border-radius: 5px;
-    background: #eee;
-    margin-bottom: 10px;
-    font: 16px 'Ubuntu', Arial;
-    height: 45px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid $contact-border;
+  border-radius: 5px;
+  background: #eee;
+  margin-bottom: 10px;
+  font: 16px 'Ubuntu', Arial;
+  height: 45px;
 }
 
 #contact textarea{
-    resize: none;
-    overflow: hidden;
-    height: 150px;
+  resize: none;
+  overflow: hidden;
+  height: 150px;
 }
 
 #contact input[type="button"],
 #contact input[type="submit"]{
-    background-color: $contact-submit;
-    border: 1px solid $contact-border;
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-    font-family: 'Ubuntu', Arial;
-    font-size: 20px;
-    padding: 10px 20px;
-    width: 100%;
-    margin-top: 20px;
+  background-color: $contact-submit;
+  border: 1px solid $contact-border;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Ubuntu', Arial;
+  font-size: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 #contact input[type="button"]:hover,
 #contact input[type="submit"]:hover {
-    background-color:$contact-submit-hover;
+  background-color:$contact-submit-hover;
 }
 
 
@@ -408,32 +424,44 @@ body {
 *****/
 
 footer {
-     background-color: $background-color;
-     position: fixed;
-     width: 100%;
-     bottom: 0;
-     height: 7vh;
-     padding: 10px 30px 20px 30px;
+  background-color: $background-color;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 7vh;
+  padding: 10px 30px 20px 30px;
 }
 
 footer .copyright {
-     position: absolute;
-     display: inline-block;
-     font-size: .7em;
-     font-style: italic;
-     color: $section-title-color;
-     vertical-align: middle;
-     margin-left: 20px;
-     margin-bottom: 20px;
-     left: 0;
-     bottom: 0;
+  position: absolute;
+  display: inline-block;
+  font-size: .7em;
+  font-style: italic;
+  color: $section-title-color;
+  vertical-align: middle;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  left: 0;
+  bottom: 0;
+}
+
+footer .footer-nav {
+  display: block;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
 
 footer .signature {
-     position: absolute;
-     height: 100%;
-     width: auto;
-     margin: 0 20px;
-     right: 0;
-     bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: auto;
+  margin: 0 20px;
+  right: 0;
+  bottom: 0;
 }

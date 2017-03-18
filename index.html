@@ -23,64 +23,53 @@ title: {{ site.title }}
 
 <body>
 
+    <!-- Loading Spinner -->
     <div id="loading-spinner">
         <img src="static/img/mrlogo.png" class="spinner-logo" />
         <div class="spinner outer">
-            <div class="spinner middle">
-                <div class="spinner inner">
-                </div>
+            <div class="spinner inner">
             </div>
         </div>
     </div>
 
     <div id="page-content" class="container-fluid">
 
+        <!-- Sidebar -->
         <div id="sidebar">
-            <div>
+            <ul>
                 <!-- GitHub -->
-                <a href="https://www.github.com/" target="_blank" class="sidebar-link">
-                    <div class="sidebar-span">
-                        <span>GitHub</span>
-                    </div>
-                    <div class="sidebar-icon">
-                        <i class="fa fa-github fa-3x" aria-hidden="true"></i>
-                    </div>
-                </a>
+                <li>
+                    <a href="{{ site.github_username }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">GitHub</span><i class="fa fa-github fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
                 <!-- CodePen -->
-                <a href="https://www.codepen.io/" target="_blank" class="sidebar-link">
-                    <div class="sidebar-span">
-                        <span>CodePen</span>
-                    </div>
-                    <div class="sidebar-icon">
-                        <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
-                    </div>
-                </a>
+                <li>
+                    <a href="{{ site.codepen_username }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">CodePen</span><i class="fa fa-codepen fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/" target="_blank" class="sidebar-link">
-                    <div class="sidebar-span">
-                        <span>LinkedIn</span>
-                    </div>
-                    <div class="sidebar-icon">
-                        <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
-                    </div>
-                </a>
+                <li>
+                    <a href="{{ site.linked_profile }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">LinkedIn</span><i class="fa fa-linkedin fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
                 <!-- Contact -->
-                <a href="#contact" class="sidebar-link">
-                    <div class="sidebar-span">
-                        <span>Contact</span>
-                    </div>
-                    <div class="sidebar-icon">
-                        <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
-                    </div>
-                </a>
-            </div>
+                <li>
+                    <a href="#contact" class="sidebar-link">
+                        <span class="sidebar-span">Contact</span><i class="fa fa-envelope fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
 
+        <!-- Slideout Menu -->
         <nav id="slideout-menu">
 
             <a href="#home"><img class="logo" src="static/img/mreiszlogo.png" alt="Michael Reisz" /></a>
 
-            <ul>
+            <ul id="menu-slider" class="opened">
                 <a href="#home"><li>Home</li></a>
                 <a href="#portfolio"><li>Portfolio</li></a>
                 <a href="#resume"><li>Resume</li></a>
@@ -92,13 +81,9 @@ title: {{ site.title }}
 
         <div class="section home" id="home">
             <div id="hero-image">
-                <div class="row">
-                    <div class="col-sm-12 col-md-8">
-                        <div class="title-section">
-                            <!-- <h1 class="title">Design.<br>&nbsp;&nbsp;&nbsp;Develop.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deliver.</h1> -->
-                            <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
-                        </div>
-                    </div>
+                <div class="title-section">
+                    <h1 class="title">&lt;Design /&gt;&nbsp;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
+                     <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
                 </div>
             </div>
         </div>
@@ -106,6 +91,13 @@ title: {{ site.title }}
         <!-- Portfolio -->
         <div class="section portfolio" id="portfolio">
             <h1 class="section-title">Portfolio</h1>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-md-3 card">
+                    <h1 class="text-center">Project 1</h1>
+                    <p>Lorum Ipsum alskdjflakdsjfal;skdjfla;skdjf;las dkjfa;lsdkjfa;lsdkjfa;lsdkjfa;l sdkjfal;skdjf;alskdjf;laskd jf;al sdkf ja;lsdkf ja;ldsk jfa;lsdk fja;lsd kjfa; lsdkfja; lsdkfja ;lsdk jfa;l ksdjf alsdkfj a;lsdk fjl;akds jfa ;lsdkfja;lsdk fj;la skdjf;l aksdfj a;lkdsjfal;dkfj al;kdsj fl;akdsjfal dkjf adf</p>
+                </div>
+            </div>
 
         </div>
 
@@ -143,6 +135,15 @@ title: {{ site.title }}
 
         <footer>
             <span class="copyright">Copyright &copy; 2017 Michael Reisz</span>
+
+            <ul class="footer-nav">
+                <a href="#home"><li>Home</li></a>
+                <a href="#portfolio"><li>Portfolio</li></a>
+                <a href="#resume"><li>Resume</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+
             <img class="signature" src="static/img/Reisz.png" alt="Michael Reisz" />
         </footer>
 
