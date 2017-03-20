@@ -117,13 +117,18 @@ body {
   #sidebar {
     display: none;
   }
+
+  .section .section-padding {
+    padding: 0 -20px;
+  }
+
 }
 
 #sidebar {
   position: fixed;
-  width: 300px;
+  width: 250px;
   top: 50%;
-  left: -250px;
+  left: -200px;
   transform: translate(0, -50%);
   background: $sidebar-background;
   z-index: 15;
@@ -158,7 +163,7 @@ body {
     display: inline-block;
     text-decoration: none;
     height: 50px;
-    width: 300px;
+    width: 250px;
     margin: 0;
     padding: 0;
     color: $sidebar-text;
@@ -170,7 +175,7 @@ body {
 
   .sidebar-link .sidebar-span {
     display: inline-block;
-    width: 250px;
+    width: 200px;
     height: 50px;
     padding-right: 10px;
     text-align: right;
@@ -189,6 +194,7 @@ body {
 
 #sidebar:hover {
     left: -50px;
+    opacity: .95;
   }
 
 /*****
@@ -222,6 +228,7 @@ body {
     background: none;
     text-align: right;
     transition: 2s ease 0s;
+    margin-bottom: 0;
 
     li {
       display: inline-block;
@@ -281,9 +288,8 @@ body {
   font-family: 'Share Tech Mono', monospace;
   color: #000;
   position: relative;
-  text-align: right;
-  top: 10vh;
-  padding-right: 15vw;
+  text-align: center;
+  top: 30vh;
   font-size: 3em;
 }
 
@@ -296,16 +302,20 @@ body {
   min-height: 95vh;
   padding: 40px 40px;
   overflow: hidden;
-}
 
-.section .section-title {
-  z-index: 5;
-  color: $section-title-color;
-  font-family: 'Ubuntu', Arial;
-  font-size: 3em;
-  text-align: center;
-  margin-top: 13vh;
-  margin-bottom: 2vh;
+  .section-title {
+    z-index: 5;
+    color: $section-title-color;
+    font-family: 'Ubuntu', Arial;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 13vh;
+    margin-bottom: 2vh;
+  }
+
+  .section-padding {
+    padding: 0 20px;
+  }
 }
 
 
@@ -325,7 +335,52 @@ body {
 
 #portfolio {
 
+  .project {
+    padding: 5px 10px;
+    border: 2px solid #000;
+    margin-bottom: 30px;
+  }
+
+  .project-image {
+    //margin: -5px -10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-description {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .card-block {
+    padding-bottom: 10px;
+  }
+
+  .card-icon {
+    display: block;
+
+  }
+
+  .card-footer {
+    display: block;
+    width: 100%;
+    text-align: right;
+    background: none;
+    margin-top: 10px;
+    //margin-bottom: 10px;
+    border-top: none;
+    padding: 5px;
+  }
+
+  .tech-icons {
+    border-left: 1px solid #000;
+    text-align: right;
+    padding: 0;
+  }
+
 }
+
+
 
 
 /*****
@@ -352,69 +407,68 @@ body {
 
 #contact {
   height: 100vh;
-}
 
-#contact .contact-background {
-  background-color: $contact-background;
-  border: 2px solid $contact-border;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 15px $contact-shadow;
-  -moz-box-shadow: 0px 0px 15px $contact-shadow;
-  -webkit-box-shadow:  0px 0px 15px $contact-shadow;
-}
+  .contact-background {
+    background-color: $contact-background;
+    border: 2px solid $contact-border;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px $contact-shadow;
+    -moz-box-shadow: 0px 0px 15px $contact-shadow;
+    -webkit-box-shadow:  0px 0px 15px $contact-shadow;
+  }
 
-#contact input[type="text"],
-#contact input[type="date"],
-#contact input[type="datetime"],
-#contact input[type="email"],
-#contact input[type="number"],
-#contact input[type="search"],
-#contact input[type="time"],
-#contact input[type="url"],
-#contact input[type="password"],
-#contact textarea,
-#contact select
-{
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  outline: none;
-  display: block;
-  width: 100%;
-  padding: 7px;
-  border: none;
-  border: 1px solid $contact-border;
-  border-radius: 5px;
-  background: #eee;
-  margin-bottom: 10px;
-  font: 16px 'Ubuntu', Arial;
-  height: 45px;
-}
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="time"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid $contact-border;
+    border-radius: 5px;
+    background: #eee;
+    margin-bottom: 10px;
+    font: 16px 'Ubuntu', Arial;
+    height: 45px;
+  }
 
-#contact textarea{
-  resize: none;
-  overflow: hidden;
-  height: 150px;
-}
+  textarea{
+    resize: none;
+    overflow: hidden;
+    height: 150px;
+  }
 
-#contact input[type="button"],
-#contact input[type="submit"]{
-  background-color: $contact-submit;
-  border: 1px solid $contact-border;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: 'Ubuntu', Arial;
-  font-size: 20px;
-  padding: 10px 20px;
-  width: 100%;
-  margin-top: 20px;
-}
+  input[type="button"],
+  input[type="submit"] {
+    background-color: $contact-submit;
+    border: 1px solid $contact-border;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Ubuntu', Arial;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
 
-#contact input[type="button"]:hover,
-#contact input[type="submit"]:hover {
-  background-color:$contact-submit-hover;
+  input[type="button"]:hover,
+  input[type="submit"]:hover {
+    background-color:$contact-submit-hover;
+  }
 }
 
 
@@ -430,38 +484,38 @@ footer {
   bottom: 0;
   height: 7vh;
   padding: 10px 30px 20px 30px;
-}
 
-footer .copyright {
-  position: absolute;
-  display: inline-block;
-  font-size: .7em;
-  font-style: italic;
-  color: $section-title-color;
-  vertical-align: middle;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  left: 0;
-  bottom: 0;
-}
-
-footer .footer-nav {
-  display: block;
-  list-style: none;
-  padding: 0;
-  text-align: center;
-
-  li {
+  .copyright {
+    position: absolute;
     display: inline-block;
-    margin: 0 10px;
+    font-size: .7em;
+    font-style: italic;
+    color: $section-title-color;
+    vertical-align: middle;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    left: 0;
+    bottom: 0;
   }
-}
 
-footer .signature {
-  position: absolute;
-  height: 100%;
-  width: auto;
-  margin: 0 20px;
-  right: 0;
-  bottom: 0;
+  .footer-nav {
+    display: block;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  .signature {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    margin: 0 20px;
+    right: 0;
+    bottom: 0;
+  }
 }

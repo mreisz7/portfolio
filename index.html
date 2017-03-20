@@ -17,6 +17,8 @@ title: {{ site.title }}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
     <link rel="stylesheet" href="static/css/portfolio.css" />
     <link rel="stylesheet" href="static/css/font-awesome.css" />
+    <link rel="stylesheet" href="static/css/font-mfizz.css" />
+
     <script src="static/js/loading-spinner.js"></script>
 
 </head>
@@ -82,7 +84,7 @@ title: {{ site.title }}
         <div class="section home" id="home">
             <div id="hero-image">
                 <div class="title-section">
-                    <h1 class="title">&lt;Design /&gt;&nbsp;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
+                    <h1 class="title">&lt;Design &nbsp;/&gt;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
                      <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
                 </div>
             </div>
@@ -91,14 +93,65 @@ title: {{ site.title }}
         <!-- Portfolio -->
         <div class="section portfolio" id="portfolio">
             <h1 class="section-title">Portfolio</h1>
+            <div class="section-padding">
 
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-md-3 card">
-                    <h1 class="text-center">Project 1</h1>
-                    <p>Lorum Ipsum alskdjflakdsjfal;skdjfla;skdjf;las dkjfa;lsdkjfa;lsdkjfa;lsdkjfa;l sdkjfal;skdjf;alskdjf;laskd jf;al sdkf ja;lsdkf ja;ldsk jfa;lsdk fja;lsd kjfa; lsdkfja; lsdkfja ;lsdk jfa;l ksdjf alsdkfj a;lsdk fjl;akds jfa ;lsdkfja;lsdk fj;la skdjf;l aksdfj a;lkdsjfal;dkfj al;kdsj fl;akdsjfal dkjf adf</p>
+                <div class="row">
+
+                    <!-- MReisz.com Portfolio Page -->
+                    <div class="col-sm-12 col-md-4 col-md-3">
+                        <div class="card project">
+                            <div class="card-block">
+                                <h4 class="card-titles">MReisz.com</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
+                                <div class="row">
+                                    <div class="col-sm-11 project-description">
+                                        <img class="card-img-top project-image" src="static/img/projects/portfolio.png" alt="mreisz.com" />
+                                        <!--<p class="card-text">Lorem ipsum dolor sit amet, harum recusabo tincidunt at eos, an qui viris populo. His ubique delectus dissentias ad, elitr alienum adolescens ex per. Te magna aeterno qui, sed eu solet putent. Ullum omnes oportere at quo, labores interesset definitiones ei duo, in eos discere ornatus veritus.</p>-->
+                                    </div>
+                                    <div class="col-sm-1 tech-icons">
+                                        <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=SASS><i class="fa icon-sass fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=Javascript><i class="fa icon-javascript-alt fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=jQuery><i class="fa icon-jquery fa-fw" aria-hidden="true"></i></abbr>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="https://github.com/mreisz7/portfolio/" class="card-link btn btn-success" target="_blank">View Source</a>
+                                        <a href="http://www.mreisz.com/" class="card-link btn btn-warning" target="_blank">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tribute Page: Adam Savage -->
+                    <div class="col-sm-12 col-md-4 col-md-3">
+                        <div class="card project">
+                            <div class="card-block">
+                                <h4 class="card-titles">Tribute Page: Adam Savage</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
+                                <div class="row">
+                                    <div class="col-sm-11 project-description">
+                                        <img class="card-img-top project-image" src="static/img/projects/tribute.png" alt="Tribute Page: Adam Savage" />
+                                    </div>
+                                    <div class="col-sm-1 tech-icons">
+                                        <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
+                                        <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="http://codepen.io/mreisz/pen/amgMrp/" class="card-link btn btn-success" target="_blank">View Source</a>
+                                        <a href="http://codepen.io/mreisz/full/amgMrp/" class="card-link btn btn-warning" target="_blank">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
-
         </div>
 
         <!-- Resume -->
