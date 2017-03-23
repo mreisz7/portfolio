@@ -9,3 +9,13 @@ $( document ).ready(function() {
                 };
         });
   });
+
+
+$("a.sitenav").click(function() {
+
+    var scrollTo = $(this).attr('data-scroll-to');
+
+    $('html,body').animate({
+        scrollTop: $("#" + scrollTo).offset().top},
+        'slow');
+});
