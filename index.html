@@ -69,9 +69,10 @@ title: {{ site.title }}
         <!-- Slideout Menu -->
         <nav id="slideout-menu">
 
-            <a href="#home"><img class="logo" src="static/img/mreiszlogo.png" alt="Michael Reisz" /></a>
+            <!--<a href="#home"><img class="logo" src="static/img/mreiszlogo.png" alt="Michael Reisz" /></a>-->
 
-            <ul id="menu-slider" class="opened">
+            <!--<ul id="menu-slider" class="opened">-->
+            <ul id="menu-slider" class="">
                 <a href="#home"><li>Home</li></a>
                 <a href="#portfolio"><li>Portfolio</li></a>
                 <!--<a href="#resume"><li>Resume</li></a>-->
@@ -82,10 +83,13 @@ title: {{ site.title }}
         </nav>
 
         <div class="section home" id="home">
-            <div id="hero-image">
-                <div class="title-section">
-                    <h1 class="title">&lt;Design &nbsp;/&gt;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
-                     <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
+            <div id="home-container" class="row">
+                <div id="logo-section" class="col-md-6 col-sm-12">
+                    <img id="home-logo" src="static/img/mrlogo.svg" alt="MReisz.com Logo" />
+                </div>
+                <div id="title-section" class="col-md-6 col-sm-12">
+                    <h1 id="home-title">&lt;Design &nbsp;/&gt;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
+                    <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
                 </div>
             </div>
         </div>
@@ -99,7 +103,7 @@ title: {{ site.title }}
 
                     <!-- MReisz.com Portfolio Page -->
                     <div class="col-sm-12 col-md-4 col-md-3">
-                        <div class="card project">
+                        <div class="card project shadow">
                             <div class="card-block">
                                 <h4 class="card-titles">MReisz.com</h4>
                                 <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
@@ -127,7 +131,7 @@ title: {{ site.title }}
 
                     <!-- Tribute Page: Adam Savage -->
                     <div class="col-sm-12 col-md-4 col-md-3">
-                        <div class="card project">
+                        <div class="card project shadow">
                             <div class="card-block">
                                 <h4 class="card-titles">Tribute Page: Adam Savage</h4>
                                 <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
@@ -149,29 +153,28 @@ title: {{ site.title }}
                         </div>
                     </div>
 
-
                 </div>
             </div>
         </div>
 
         <!-- Resume -->
-        <div class="section resume" id="resume">
-            <h1 class="section-title">Resume</h1>
+        <!--<div class="section resume" id="resume">-->
+            <!--<h1 class="section-title">Resume</h1>-->
 
-        </div>
+        <!--</div>-->
 
         <!-- About -->
-        <div class="section about" id="about">
-            <h1 class="section-title">About</h1>
+        <!--<div class="section about" id="about">-->
+            <!--<h1 class="section-title">About</h1>-->
 
-        </div>
+        <!--</div>-->
 
         <!-- Contact -->
         <div class="section contact" id="contact">
             <h1 class="section-title">Contact</h1>
 
             <div class="row">
-                <div class="contact-background col-sm-12 offset-md-4 col-md-4">
+                <div class="contact-background col-sm-12 offset-md-4 col-md-4 shadow">
                     <form action="https://formspree.io/{{ site.email }}" method="POST">
                         <input placeholder="Name" type="text" name="name" />
                         <input placeholder="Email" type="email" name="_replyto" />

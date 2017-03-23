@@ -28,6 +28,12 @@ body {
   background: $background-color;
 }
 
+.shadow {
+  box-shadow: 0px 0px 5px $contact-shadow;
+  -moz-box-shadow: 0px 0px 5px $contact-shadow;
+  -webkit-box-shadow:  0px 0px 5px $contact-shadow;
+
+}
 
 /*****
     Spinner Animation
@@ -113,7 +119,7 @@ body {
      Sidebar
 *****/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 575px) {
   #sidebar {
     display: none;
   }
@@ -134,7 +140,7 @@ body {
   z-index: 15;
   margin: 0;
   border-radius: 20px;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: .25s ease .25s;
 
   ul {
@@ -190,12 +196,12 @@ body {
     font-size: 2em;
   }
 
-}
-
-#sidebar:hover {
+  &:hover {
     left: -50px;
     opacity: .95;
   }
+
+}
 
 /*****
     Slideout Nav Menu
@@ -203,12 +209,13 @@ body {
 
 #slideout-menu {
   box-sizing: content-box;
-  background-color: $background-color;
+  //background-color: $background-color;
+  background: none;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  padding: 2vh;
+  padding: 2vh 1vh 1vh;
   z-index: 5;
 
   .logo {
@@ -251,46 +258,18 @@ body {
     color: $nav-link-hover-color;
     border-bottom: 4px solid $nav-link-color;
   }
-}
 
-#slideout-menu:hover > ul {
-  //position: relative;
-  left: 0;
-  transition: 1s ease 0s;
-}
+  &:hover > ul {
+    //position: relative;
+    left: 0;
+    transition: 1s ease 0s;
+  }
 
-#slideout-menu .opened {
-  left: 0 !important;
-  transition: 1s ease 0s;
-}
+  .opened {
+    left: 0 !important;
+    transition: 1s ease 0s;
+  }
 
-/*****
-     Hero Image
-*****/
-
-#hero-image {
-  position: absolute;
-  top: 13vh;
-  margin-left: -35px;
-  margin-right: -35px;
-  width: 100%;
-  overflow: hidden;
-  background-image: url('../img/' + $background-image);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center top;
-  height: 73vh;
-  z-index: 10;
-}
-
-#hero-image .title {
-  font-family: 'Share Tech Mono', monospace;
-  color: #000;
-  position: relative;
-  text-align: center;
-  top: 30vh;
-  font-size: 3em;
 }
 
 
@@ -299,9 +278,9 @@ body {
 *****/
 
 .section {
+  position: relative;
   min-height: 95vh;
-  padding: 40px 40px;
-  overflow: hidden;
+  padding-top: 10vh;
 
   .section-title {
     z-index: 5;
@@ -309,13 +288,10 @@ body {
     font-family: 'Ubuntu', Arial;
     font-size: 3em;
     text-align: center;
-    margin-top: 13vh;
+    margin-top: 3vh;
     margin-bottom: 2vh;
   }
 
-  .section-padding {
-    padding: 0 20px;
-  }
 }
 
 
@@ -325,8 +301,81 @@ body {
 
 #home {
   height: 100vh;
-  padding: 40px 20px !important;
+  overflow: hidden;
+
+  #home-container {
+    position: absolute;
+    width: 100%;
+    top: 50vh;
+    Left: 50vw;
+    transform: translate(-50%, -50%);
+
+    #logo-section {
+      border-right: 3px solid black;
+      text-align: right;
+
+      #home-logo {
+        margin: 40px 20px;
+        max-width: 300px;
+        height: 20vh;
+      }
+
+    }
+
+    #title-section {
+      font-family: 'Share Tech Mono', monospace;
+      color: #000;
+      text-align: left;
+      padding: auto;
+
+      #home-title {
+        display: flex;
+        align-items: center;
+        margin: auto 0 auto 20px;
+        height: 100%;
+        font-size: 5vh;
+      }
+
+    }
+
+  }
+
 }
+
+@media only screen and (max-width: 767px) {
+
+  #home-container {
+    width: 80% !important;
+    max-width: 380px;
+
+    #logo-section {
+      border-right: none !important;
+      border-bottom: 3px solid black;
+      text-align: center !important;
+
+      #home-logo {
+        margin: 0 0 20px !important;
+        width: 100%;
+      }
+
+    }
+
+    #title-section {
+      text-align: center !important;
+
+      #home-title {
+        display: block !important;
+        margin: 20px 0 0 !important;
+        text-align: center !important;
+        font-size: 6vh !important;
+      }
+
+    }
+
+  }
+
+}
+
 
 
 /*****
@@ -334,48 +383,56 @@ body {
 *****/
 
 #portfolio {
+  padding: 10px 50px;
 
   .project {
-    padding: 5px 10px;
-    border: 1px solid #000;
+    border: 1px solid $contact-border;
     border-radius: 10px;
     margin-bottom: 30px;
+
+    .project-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .project-description {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .card-block {
+      padding-bottom: 10px;
+    }
+
+    .card-icon {
+      display: block;
+
+    }
+
+    .card-footer {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: none;
+      margin-top: 10px;
+      border-top: none;
+      padding: 5px;
+    }
+
+    .tech-icons {
+      border-left: 1px solid $contact-border;
+      text-align: right;
+      padding: 0;
+    }
+
   }
 
-  .project-image {
-    width: 100%;
-    height: auto;
-  }
+}
 
-  .project-description {
-    text-align: justify;
-    margin-bottom: 20px;
-  }
+@media only screen and (max-width: 767px) {
 
-  .card-block {
-    padding-bottom: 10px;
-  }
-
-  .card-icon {
-    display: block;
-
-  }
-
-  .card-footer {
-    display: block;
-    width: 100%;
-    text-align: right;
-    background: none;
-    margin-top: 10px;
-    //margin-bottom: 10px;
-    border-top: none;
-    padding: 5px;
-  }
-
-  .tech-icons {
-    border-left: 1px solid #000;
-    text-align: right;
-    padding: 0;
+  #portfolio {
+    padding: 10px !important;
   }
 
 }
@@ -407,15 +464,21 @@ body {
 
 #contact {
   height: 100vh;
+  padding: 10px;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
 
   .contact-background {
     background-color: $contact-background;
-    border: 2px solid $contact-border;
+    border: 1px solid $contact-border;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 0px 15px $contact-shadow;
-    -moz-box-shadow: 0px 0px 15px $contact-shadow;
-    -webkit-box-shadow:  0px 0px 15px $contact-shadow;
   }
 
   input[type="text"],
@@ -436,7 +499,6 @@ body {
     display: block;
     width: 100%;
     padding: 7px;
-    border: none;
     border: 1px solid $contact-border;
     border-radius: 5px;
     background: #eee;
@@ -507,6 +569,7 @@ footer {
     li {
       display: inline-block;
       margin: 0 10px;
+      text-align: center;
     }
   }
 
