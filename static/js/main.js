@@ -19,3 +19,24 @@ $("a.sitenav").click(function() {
         scrollTop: $("#" + scrollTo).offset().top},
         'slow');
 });
+
+
+// Handle Contact Form Modal window
+$("a.sitemodal").click(function() {
+    modalSwitch();
+})
+
+$('#contact').click(function(e) {
+    if(e.target.id  === 'contact') {
+        modalSwitch();
+    }
+})
+
+function modalSwitch() {
+    $('#contact').toggleClass('hide show');
+    if($('#contact').hasClass('show')) {
+        $('body').css('overflow', 'hidden');
+    } else {
+        $('body').css('overflow', 'auto');
+    };
+}
