@@ -16,6 +16,8 @@ $contact-shadow: #333;
 $contact-submit: #1A9AFC;
 $contact-submit-hover: #147bc9;
 $modal-background: rgba(0, 0, 0, .75);
+$contact-close: #ff4618;
+$contact-close-hover: #e82318;
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
@@ -484,6 +486,7 @@ body {
 
   .contact-background {
     position: absolute;
+    width: 25%;
     min-width: 300px;
     top: 50%;
     left: 50%;
@@ -493,10 +496,23 @@ body {
     border-radius: 10px;
     padding: 20px;
 
-  .contact-title {
-    margin: 10px;
-    text-align: center;
-  }
+    .contact-title {
+      margin: 0 0 20px;
+      text-align: center;
+    }
+
+    .form-close {
+      position: absolute;
+      color: $contact-close;
+      top: 15px;
+      Right: 15px;
+      cursor: pointer;
+    }
+
+    .form-close:hover {
+      color: $contact-close-hover;
+    }
+
   }
 
   input[type="text"],

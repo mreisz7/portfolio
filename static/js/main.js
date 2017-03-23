@@ -32,6 +32,10 @@ $('#contact').click(function(e) {
     }
 })
 
+$('#contact-close').click(function() {
+    modalSwitch();
+})
+
 function modalSwitch() {
     $('#contact').toggleClass('hide show');
     if($('#contact').hasClass('show')) {
