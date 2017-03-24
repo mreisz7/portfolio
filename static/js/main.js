@@ -44,3 +44,18 @@ function modalSwitch() {
         $('body').css('overflow', 'auto');
     };
 }
+
+$('#menu-button').click(function() {
+    if($('body').hasClass('open')) {
+        $('body').removeClass('open');
+        $('#slideout-menu').removeClass('open');
+    } else {
+        $('body').addClass('open');
+        $('#slideout-menu').addClass('open');
+    }
+})
+
+$('#slideout-menu a').click(function() {
+    $('body').removeClass('open');
+    $('#slideout-menu').removeClass('open');
+})
