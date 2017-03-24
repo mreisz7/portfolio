@@ -39,7 +39,7 @@ body {
   -moz-transition: all 0.3s ease;
 
   &.open {
-    left: -250px !important;
+    left: -200px !important;
   }
 
 }
@@ -226,8 +226,8 @@ body {
 #slideout-menu {
   background-color: $nav-background-color;
   position: fixed;
-  width: 250px;
-  right: -250px;
+  width: 200px;
+  right: -200px;
   top: 0;
   height: 100%;
   z-index: 5;
@@ -255,47 +255,31 @@ body {
   }
 
   ul {
-    position: relative;
     height: 100%;
-    //left: 100%;
-    padding: auto .5em;
-    background: none;
-    text-align: right;
-    transition: 2s ease 0s;
-    margin-bottom: 0;
+    width: 100%;
+    padding: 0;
     list-style: none;
 
     li {
-      //display: inline-block;
-      padding: 0.25em 1em;
+      padding: 0.25em .5em;
       text-decoration: none;
     }
 
   }
 
   ul > a {
+    box-sizing: border-box;
     font-family: 'Ubuntu', Arial;
     background: none;
     text-decoration: none;
-    font-size: 3vh;
+    font-size: 1.5em;
     color: $nav-link-color;
-    padding-bottom: 10px;
+    padding-left: 10px;
   }
 
   ul > a:hover {
     color: $nav-link-hover-color;
-    border-bottom: 4px solid $nav-link-color;
-  }
-
-  &:hover > ul {
-    //position: relative;
-    left: 0;
-    transition: 1s ease 0s;
-  }
-
-  .opened {
-    left: 0 !important;
-    transition: 1s ease 0s;
+    border-left: 4px solid $nav-link-color;
   }
 
 }
