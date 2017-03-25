@@ -10,26 +10,27 @@ $("a.sitenav").click(function() {
 
 // Handle Contact Form Modal window
 $("a.sitemodal").click(function() {
-    modalSwitch();
+    contactSwitch();
 })
 
 $('#contact').click(function(e) {
     if(e.target.id  === 'contact') {
-        modalSwitch();
+        contactSwitch();
     }
 })
 
 $('#contact-close').click(function() {
-    modalSwitch();
+    contactSwitch();
 })
 
-function modalSwitch() {
+function contactSwitch() {
+    $('#modal').toggleClass('off on');
     $('#contact').toggleClass('hide show');
-    if($('#contact').hasClass('show')) {
-        $('body').css('overflow', 'hidden');
-    } else {
-        $('body').css('overflow', 'auto');
-    };
+    // if($('#contact').hasClass('show')) {
+    //     $('body').css('overflow', 'hidden');
+    // } else {
+    //     $('body').css('overflow', 'auto');
+    // };
 }
 
 $('#menu-button').click(function() {
@@ -40,9 +41,19 @@ $('#menu-button').click(function() {
         $('body').addClass('open');
         $('#slideout-menu').addClass('open');
     }
+    $('#modal').toggleClass('off on');
 })
 
 $('#slideout-menu a').click(function() {
+    $('#modal').toggleClass('off on');
     $('body').removeClass('open');
     $('#slideout-menu').removeClass('open');
 })
+
+$('#modal').click(function() {
+    $('#modal').toggleClass('off on');
+    $('#contact').removeClass('show').addClass('hide');
+    $('body').removeClass('open');
+    $('#slideout-menu').removeClass('open');
+})
+
