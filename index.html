@@ -8,50 +8,187 @@ title: {{ site.title }}
 <head>
 
     <title>{{ site.title }}</title>
-    <meta charset="utf-8">
-    <meta name="description" content="{{ site.title }}">
-    <meta name="author" content="Michael Reisz">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" href="static/img/favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ site.title }}" />
+    <meta name="author" content="Michael Reisz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="static/img/favicon.ico" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/portfolio.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="static/css/portfolio.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.css" />
+    <link rel="stylesheet" href="static/css/font-mfizz.css" />
+
     <script src="static/js/loading-spinner.js"></script>
+    <link rel="stylesheet" href="static/css/portfolio.scss">
 
 </head>
 
 <body>
 
+    <!-- Loading Spinner -->
     <div id="loading-spinner">
-        <img src="static/img/mrlogo.png" class="spinner-logo" />
+        <img src="static/img/mrlogo.svg" class="spinner-logo" />
         <div class="spinner outer">
-            <div class="spinner middle">
-                <div class="spinner inner">
-                </div>
+            <div class="spinner inner">
             </div>
         </div>
     </div>
 
     <div id="page-content" class="container-fluid">
 
+        <div id="modal" class="off">
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul>
+                <!-- GitHub -->
+                <li>
+                    <a href="{{ site.github_username }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">GitHub</span><i class="fa fa-github fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- CodePen -->
+                <li>
+                    <a href="{{ site.codepen_username }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">CodePen</span><i class="fa fa-codepen fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- LinkedIn -->
+                <li>
+                    <a href="{{ site.linked_profile }}" target="_blank" class="sidebar-link">
+                        <span class="sidebar-span">LinkedIn</span><i class="fa fa-linkedin fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- Contact -->
+                <li>
+                    <a href="javascript:void(0)" class="sidebar-link sitemodal">
+                        <span class="sidebar-span">Contact</span><i class="fa fa-envelope fa-2x fa-fw sidebar-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slideout Menu -->
         <nav id="slideout-menu">
 
-            <a href="#home"><img class="logo" src="static/img/mreiszlogo.png" alt="Michael Reisz" /></a>
+            <i id="menu-button" class="fa fa-bars fa-3x fa-fw" aria-hidden="true"></i>
+
+            <a href="#home"><img class="logo" src="static/img/mreiszlogo.svg" alt="Michael Reisz" /></a>
+
+            <ul id="menu-slider" class="">
+                {% include nav.html %}
+            </ul>
 
         </nav>
 
         <div class="section home" id="home">
-            <div id="hero-image">
-                <div class="row">
-                    <div class="title-section">
-                        <h1 class="title">Coming Soon</h1>
-                    </div>
+            <div id="home-container" class="row">
+                <div id="logo-section" class="col-md-6 col-sm-12">
+                    <img id="home-logo" src="static/img/mrlogo.svg" alt="MReisz.com Logo" />
+                </div>
+                <div id="title-section" class="col-md-6 col-sm-12">
+                    <h1 id="home-title">&lt;Design &nbsp;/&gt;<br>&lt;Develop /&gt;<br>&lt;Deliver /&gt;</h1>
+                    <!-- <h1 class="title">Designs by Michael Reisz</h1> -->
                 </div>
             </div>
         </div>
 
+        <!-- Portfolio -->
+        <div class="section portfolio" id="portfolio">
+            <h1 class="section-title">Portfolio</h1>
+            <div class="section-padding">
+
+                <div class="row">
+
+                    {% for project in site.projects reversed %}
+                        <!-- Projects Template -->
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card project shadow">
+                                <div class="card-block">
+                                    <h4 class="card-titles">{{ project.title }}</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ project.subtitle }}</h6>
+                                    <div class="row">
+                                        <div class="col-sm-11 project-description">
+                                            <img class="card-img-top project-image" src="static/img/projects/{{ project.imgsrc }}" alt="{{ project.title }}" />
+                                        </div>
+                                        <div class="col-sm-1 tech-icons">
+                                            {% if project.technologies contains "html5" %}
+                                                <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "css3" %}
+                                                <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "sass" %}
+                                                <abbr title=SASS><i class="fa icon-sass fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "bootstrap" %}
+                                                <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "javascript" %}
+                                                <abbr title=Javascript><i class="fa icon-javascript-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "jquery" %}
+                                                <abbr title=jQuery><i class="fa icon-jquery fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="prj-btn-div">
+                                                <a href="{{ project.sourcelink }}" class="card-link btn btn-success" target="_blank">View Source</a>
+                                            </div>
+                                            <div class="prj-btn-div">
+                                                <a href="{{ project.projectlink }}" class="card-link btn btn-primary" target="_blank">View Project</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume -->
+        <!--<div class="section resume" id="resume">-->
+            <!--<h1 class="section-title">Resume</h1>-->
+
+        <!--</div>-->
+
+        <!-- About -->
+        <!--<div class="section about" id="about">-->
+            <!--<h1 class="section-title">About</h1>-->
+
+        <!--</div>-->
+
+        <!-- Contact Modal -->
+        <div class="hide" id="contact">
+
+                <div id="contact-form" class="contact-background shadow">
+                    <h1 class="contact-title">Contact</h1>
+                    <i id="contact-close" class="fa fa-times-circle-o fa-fw form-close fa-2x" aria-hidden="true"></i>
+                    <form action="https://formspree.io/{{ site.email }}" method="POST">
+                        <input placeholder="Name" type="text" name="name" required />
+                        <input placeholder="Email" type="email" name="_replyto" required />
+                        <textarea placeholder="Message" name="message" onkeyup="adjust_textarea(this)" required></textarea>
+                        <input type="hidden" name="_next" value="#home" />
+                        <input type="hidden" name="_subject" value="Message from MReisz.com" />
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+
+        </div>
+
+
         <footer>
             <span class="copyright">Copyright &copy; 2017 Michael Reisz</span>
+
+            <ul class="footer-nav hidden-sm-down">
+                {% include nav.html %}
+            </ul>
+
             <img class="signature" src="static/img/Reisz.png" alt="Michael Reisz" />
         </footer>
 
@@ -60,6 +197,7 @@ title: {{ site.title }}
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="static/js/main.js"></script>
 
 </body>
 
