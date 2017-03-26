@@ -16,7 +16,7 @@ $contact-border: #555;
 $contact-shadow: #333;
 $contact-submit: #1A9AFC;
 $contact-submit-hover: #147bc9;
-$modal-background: rgba(0, 0, 0, .25);
+$modal-background: rgba(0, 0, 0, .35);
 $contact-close: #ff4618;
 $contact-close-hover: #ff2300;
 
@@ -287,7 +287,7 @@ body {
   ul {
     height: 100%;
     width: 100%;
-    padding: 0;
+    padding: 20px 0 0;
     list-style: none;
 
     li {
@@ -297,12 +297,12 @@ body {
       color: $nav-link-color;
       padding-left: 10px;
       border-left: 10px solid $nav-background-color;
-      border-right: 50px solid $nav-background-color;
+      border-right: 30px solid $nav-background-color;
 
       &:hover {
         color: $nav-link-hover-color;
         border-left: 10px solid $nav-link-color;
-        border-right: 50px solid $nav-link-color;
+        border-right: 30px solid $nav-link-color;
       }
 
       a:hover {
@@ -463,6 +463,14 @@ body {
       margin-top: 10px;
       border-top: none;
       padding: 5px;
+
+      .prj-btn-div {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
     }
 
     .tech-icons {
@@ -644,9 +652,21 @@ footer {
 
     li {
       display: inline-block;
-      margin: 0 10px;
+      margin: 5px;
       text-align: center;
+      border-bottom: 2px;
+      padding: 5px 10px;
+
+      &:hover {
+        border-bottom: 2px solid $nav-link-hover-color;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
     }
+
   }
 
   .signature {
