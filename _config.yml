@@ -2,7 +2,7 @@
 title: Michael Reisz Designs
 email: michael_reisz@yahoo.com
 description: > # A showcase of the work of Michael Reisz.
-url: "http://www.michael-reisz.com"
+url: "http://www.mreisz.com"
 baseurl: "" # the subpath of your site, e.g. /blog
 github_username:  "https://github.com/mreisz7"
 codepen_username: "https://codepen.io/mreisz/"
@@ -23,6 +23,8 @@ keep_files:
 
 # Build settings
 repository: mreisz7/portfolio.git
+collections:
+  - projects
 markdown: kramdown
 theme: minima
 sass:

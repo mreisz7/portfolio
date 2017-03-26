@@ -106,65 +106,50 @@ title: {{ site.title }}
 
                 <div class="row">
 
-                    <!-- MReisz.com Portfolio Page -->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card project shadow">
-                            <div class="card-block">
-                                <h4 class="card-titles">MReisz.com</h4>
-                                <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
-                                <div class="row">
-                                    <div class="col-sm-11 project-description">
-                                        <img class="card-img-top project-image" src="static/img/projects/portfolio.png" alt="mreisz.com" />
-                                        <!--<p class="card-text">Lorem ipsum dolor sit amet, harum recusabo tincidunt at eos, an qui viris populo. His ubique delectus dissentias ad, elitr alienum adolescens ex per. Te magna aeterno qui, sed eu solet putent. Ullum omnes oportere at quo, labores interesset definitiones ei duo, in eos discere ornatus veritus.</p>-->
-                                    </div>
-                                    <div class="col-sm-1 tech-icons">
-                                        <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=SASS><i class="fa icon-sass fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=Javascript><i class="fa icon-javascript-alt fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=jQuery><i class="fa icon-jquery fa-fw" aria-hidden="true"></i></abbr>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="prj-btn-div">
-                                            <a href="https://github.com/mreisz7/portfolio/tree/master/" class="card-link btn btn-success" target="_blank">View Source</a>
+                    {% for project in site.projects reversed %}
+                        <!-- Projects Template -->
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card project shadow">
+                                <div class="card-block">
+                                    <h4 class="card-titles">{{ project.title }}</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ project.subtitle }}</h6>
+                                    <div class="row">
+                                        <div class="col-sm-11 project-description">
+                                            <img class="card-img-top project-image" src="static/img/projects/{{ project.imgsrc }}" alt="{{ project.title }}" />
                                         </div>
-                                        <div class="prj-btn-div">
-                                            <a href="http://www.mreisz.com/" class="card-link btn btn-primary" target="_blank">View Project</a>
+                                        <div class="col-sm-1 tech-icons">
+                                            {% if project.technologies contains "html5" %}
+                                                <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "css3" %}
+                                                <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "sass" %}
+                                                <abbr title=SASS><i class="fa icon-sass fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "bootstrap" %}
+                                                <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "javascript" %}
+                                                <abbr title=Javascript><i class="fa icon-javascript-alt fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
+                                            {% if project.technologies contains "jquery" %}
+                                                <abbr title=jQuery><i class="fa icon-jquery fa-fw" aria-hidden="true"></i></abbr>
+                                            {% endif %}
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Adam Savage: A Tribute -->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card project shadow">
-                            <div class="card-block">
-                                <h4 class="card-titles">Adam Savage: A Tribute</h4>
-                                <h6 class="card-subtitle mb-2 text-muted">FreeCodeCamp Project</h6>
-                                <div class="row">
-                                    <div class="col-sm-11 project-description">
-                                        <img class="card-img-top project-image" src="static/img/projects/tribute.png" alt="Tribute Page: Adam Savage" />
-                                    </div>
-                                    <div class="col-sm-1 tech-icons">
-                                        <abbr title=HTML5><i class="fa icon-html5-alt fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=CSS3><i class="fa icon-css3-alt fa-fw" aria-hidden="true"></i></abbr>
-                                        <abbr title=Bootstrap><i class="fa icon-bootstrap fa-fw" aria-hidden="true"></i></abbr>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="prj-btn-div">
-                                            <a href="http://codepen.io/mreisz/pen/amgMrp/" class="card-link btn btn-success" target="_blank">View Source</a>
-                                        </div>
-                                        <div class="prj-btn-div">
-                                            <a href="http://codepen.io/mreisz/full/amgMrp/" class="card-link btn btn-primary" target="_blank">View Project</a>
+                                        <div class="card-footer">
+                                            <div class="prj-btn-div">
+                                                <a href="{{ project.sourcelink }}" class="card-link btn btn-success" target="_blank">View Source</a>
+                                            </div>
+                                            <div class="prj-btn-div">
+                                                <a href="{{ project.projectlink }}" class="card-link btn btn-primary" target="_blank">View Project</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
             </div>
