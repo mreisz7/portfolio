@@ -78,11 +78,7 @@ title: {{ site.title }}
             <a href="#home"><img class="logo" src="static/img/mreiszlogo.svg" alt="Michael Reisz" /></a>
 
             <ul id="menu-slider" class="">
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="home">Home</a></li>
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="portfolio">Portfolio</a></li>
-                <!--<li><a href="javascript:void(0)" class="sitenav" data-scroll-to="resume">Resume</a></li>-->
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="about">About</a></li>
-                <li><a href="javascript:void(0)" class="sitemodal">Contact</a></li>
+                {% include nav.html %}
             </ul>
 
         </nav>
@@ -190,11 +186,7 @@ title: {{ site.title }}
             <span class="copyright">Copyright &copy; 2017 Michael Reisz</span>
 
             <ul class="footer-nav hidden-sm-down">
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="home">Home</a></li>
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="portfolio">Portfolio</a></li>
-                <!--<li><a href="javascript:void(0)" class="sitenav" data-scroll-to="resume">Resume</a></li>-->
-                <li><a href="javascript:void(0)" class="sitenav" data-scroll-to="about">About</a></li>
-                <li><a href="javascript:void(0)" class="sitemodal">Contact</a></li>
+                {% include nav.html %}
             </ul>
 
             <img class="signature" src="static/img/Reisz.png" alt="Michael Reisz" />
