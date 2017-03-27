@@ -25,6 +25,7 @@ keep_files:
 repository: mreisz7/portfolio.git
 collections:
   - projects
+google_analytics: UA-96245556-1
 markdown: kramdown
 theme: minima
 sass:
