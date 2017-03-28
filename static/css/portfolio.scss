@@ -324,8 +324,10 @@ body {
 
 .section {
   position: relative;
-  min-height: 100vh;
-  padding-top: 10vh;
+  min-height: 93vh;
+  margin-bottom: 7vh;
+  padding: 10px 50px;
+
 
   .section-title {
     z-index: 5;
@@ -429,7 +431,6 @@ body {
 *****/
 
 #portfolio {
-  padding: 10px 50px;
 
   .project {
     border: 1px solid $contact-border;
@@ -500,7 +501,7 @@ body {
 *****/
 
 #resume {
-  padding: 10px;
+  //padding: 10px 50px;
 }
 
 
@@ -509,7 +510,24 @@ body {
 *****/
 
 #about {
-  padding: 10px;
+  //padding: 10px 50px;
+  margin-bottom: 7vh;
+
+  .content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 150em;
+    margin-bottom: 40px;
+
+    .profile-pic {
+      max-width: 300px;
+      float: left;
+      margin: 0 20px 20px 0;
+    }
+
+  }
+
 }
 
 
